@@ -6,3 +6,10 @@
 - Posts (Título e corpo) 
 - Comentário (Nome e comentário) 
 - Login 
+
+## REQUISITOS
+
+- [Devise](https://github.com/plataformatec/devise)
+- [SimpleForm](https://github.com/plataformatec/simple_form)
+- [Bootstrap](http://getbootstrap.com/)
+- Visual minimamente aceitável
