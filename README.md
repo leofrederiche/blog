@@ -13,3 +13,6 @@
 - [SimpleForm](https://github.com/plataformatec/simple_form)
 - [Bootstrap](http://getbootstrap.com/)
 - Visual minimamente aceitável
+ 
+## Base para o visual
+[Blog Heroku](https://blog.heroku.com/)
