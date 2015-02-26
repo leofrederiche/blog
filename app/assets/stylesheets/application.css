@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+  text-align: center;
+ }
+
+ .Brand{
+  width: 40px;
+  position: relative;
+  top: -10px;
+ }
+
+ .row{
+  text-align: left;
+  padding: 50px;
+ }
+
+ .col-md-5{
+  color: darkcyan;
+ }
+
+ .col-md-7 h1{
+  color: darkcyan;
+ }

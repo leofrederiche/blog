@@ -1,0 +1,12 @@
+<p class="navbar-text navbar-right">
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' if current_user %>
+</p>
+
+<p class="navbar-text navbar-right">
+  <%= link_to "Novo post", "#" %>
+</p>
+
+<p class="navbar-text navbar-right">
+  <%= notice %> <%= alert %> <%= current_user.email if current_user %>
+</p>
+
