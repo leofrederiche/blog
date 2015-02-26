@@ -18,6 +18,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find_by_title(params[:title])
+    @posts = Post.all.reverse
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :text)

@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @users = User.all.reverse
+    @posts = Post.all.reverse
   end
 
 end
