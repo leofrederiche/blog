@@ -1,0 +1,10 @@
+<h1>Nova postagen</h1>
+
+<%= simple_form_for @new, url: new_post_path do |p| %>
+  
+  <%= p.input :title, label: "Titulo" %>
+  <%= p.input :text, label: "Texto" %>
+
+  <%= p.submit "enviar", class: "btn btn-primary" %>
+
+<% end %>

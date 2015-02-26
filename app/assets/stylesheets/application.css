@@ -14,25 +14,35 @@
  *= require_self
  */
 
- body{
+body{
   text-align: center;
- }
+}
 
- .Brand{
+.Brand{
   width: 40px;
   position: relative;
   top: -10px;
- }
+}
 
- .row{
+.row{
   text-align: left;
   padding: 50px;
- }
+}
 
- .col-md-5{
-  color: darkcyan;
- }
+.col-md-5{
+  color: #337ab7;
+}
 
- .col-md-7 h1{
-  color: darkcyan;
- }
+.col-md-7 h1{
+  color: #337ab7;
+}
+
+input{
+  width: 250px !important;
+  margin: 0 auto !important;
+}
+
+textarea{
+  width: 250px !important;
+  margin: 0 auto !important;
+}
