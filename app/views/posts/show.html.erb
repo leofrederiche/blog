@@ -4,7 +4,7 @@
   <div class="col-xs-12 col-md-5">
 
     <% @posts.each do |p| %>
-      <h2 style="color: black; float: left;"># <br></h2> <h1> <%= p.title %></h1>
+      <h1># <%= link_to p.title, show_post_path(p.title) %></h1>
     <% end %>
 
   </div>
@@ -16,5 +16,22 @@
     <p>
       <%= @post.text %>
     </p>
+
+    <%= simple_form_for @new_comment, url: show_post_path(@post.title), class: "new-comment" do |p| %>
+      <%= p.input :name, label: "Nome", class: "comment-name" %>
+      <%= p.input :comment, label: "Comentário", class: "comment-name" %>
+
+      <%= p.submit "Criar comentário", class: "comment-input btn btn-default" %>
+    <% end %>
+
+    <% @comments.each do |c| %>
+      <div class="comment">
+        <b><%= c.name %></b>
+        <small><p>
+          <%= c.comment %>
+        </p></small>
+      </div>
+    <% end %>    
+
   </div>
 </div>

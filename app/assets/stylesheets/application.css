@@ -46,3 +46,41 @@ textarea{
   width: 250px !important;
   margin: 0 auto !important;
 }
+
+
+
+.new-comment input{
+  text-align: left;
+}
+
+
+.comment_name {
+  float: left;
+  width: 175px;
+}
+
+#comment_name{
+  width: 150px !important;
+}
+
+.comment_comment{
+  float: left;
+}
+
+#comment_comment{
+  position: relative;
+  height: 35px;
+}
+
+.comment-input{
+  position: relative;
+  top: 5px;
+  width: 150px !important;
+  margin: 20px !important;
+}
+
+.comment{
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding: 10px 0px;
+}

@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!
-
   def new
+    unless current_user
+      redirect_to new_user_session_path
+    end
+
     @new = Post.new
   end
 
@@ -21,6 +23,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by_title(params[:title])
     @posts = Post.all.reverse
+    @new_comment = Comment.new
+    @comments = @post.comments
   end
 
   private
