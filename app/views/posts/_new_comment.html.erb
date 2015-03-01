@@ -1,1 +1,6 @@
-<h1>Novo Comentario</h1>
+<%= simple_form_for @new_comment, url: show_post_path(@post.title), class: "new-comment" do |p| %>
+  <%= p.input :name, label: "Nome", class: "comment-name" %>
+  <%= p.input :comment, label: "Comentário", class: "comment-name" %>
+
+  <%= p.submit "Criar comentário", class: "comment-input btn btn-default" %>
+<% end %>

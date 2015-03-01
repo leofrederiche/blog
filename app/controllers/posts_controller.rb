@@ -24,7 +24,28 @@ class PostsController < ApplicationController
     @post = Post.find_by_title(params[:title])
     @posts = Post.all.reverse
     @new_comment = Comment.new
-    @comments = @post.comments
+    @comments = @post.comments.reverse
+  end
+
+  def edit
+    @post = Post.find params[:id]
+  end
+
+  def update
+    @post = Post.find params[:id]
+
+    @post.update_attributes(params.require(:post).permit(:title, :text))
+    @post.save
+
+    redirect_to show_post_path(@post.title)
+  end
+
+  def delete
+    @post = Post.find params[:id]
+
+    @post.delete
+
+    redirect_to root_path
   end
 
   private

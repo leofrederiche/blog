@@ -84,3 +84,7 @@ textarea{
   border-top: 1px solid gray;
   padding: 10px 0px;
 }
+
+.right{
+  float: right;
+}
