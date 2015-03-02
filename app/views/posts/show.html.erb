@@ -1,4 +1,4 @@
-<h1>Bem-vindo ao Blog</h1>
+<h1>Leonardo Camp Frederiche</h1>
 
 <div class="row">
   <div class="col-xs-12 col-md-5">
@@ -17,9 +17,8 @@
       <%= link_to "Editar", edit_post_path(@post.id) if current_user %> -
       <%= link_to "Excluir", delete_post_path(@post.id) if current_user %>
     </p>
-    <p>
-      <%= @post.text %>
-    </p>
+    <pre><%= @post.text %></pre>
+    
 
     <%= render "new_comment" %>
 
