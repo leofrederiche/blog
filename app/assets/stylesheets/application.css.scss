@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  text-align: center;
+  padding-top: 50px;
+}
+
+.Brand{
+  width: 40px;
+  position: relative;
+  top: -10px;
+}
+
+.row{
+  text-align: left;
+  padding: 50px;
+}
+
+.col-md-4{
+  color: white;
+
+}
+
+.col-md-8 h1{
+  color: #337ab7;
+}
+
+input{
+  width: 250px !important;
+  margin: 0 auto !important;
+}
+
+textarea{
+  width: 250px !important;
+  margin: 0 auto !important;
+}
+
+.new-comment input{
+  text-align: left;
+}
+
+
+.comment_name {
+  float: left;
+  width: 175px;
+}
+
+#comment_name{
+  width: 150px !important;
+}
+
+.comment_comment{
+  float: left;
+}
+
+#comment_comment{
+  position: relative;
+  height: 35px;
+}
+
+.comment-input{
+  position: relative;
+  top: 5px;
+  width: 150px !important;
+  margin: 20px !important;
+}
+
+.comment{
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding: 10px 0px;
+}
+
+.right{
+  float: right;
+  position: relative;
+  top: -40px;
+}
+
+.comment_form{
+  margin-top: 30px;
+}
+
+.col-md-4{
+  background-image: image-url("blur.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed !important;
+  top: 50px;
+  left: 0px;
+  float: left;
+  height: 100%;
+}
+
+.col-md-8{
+  margin-left: 33.5%;
+}
+
+.name{
+  margin: 40px;
+}
+
+pre{
+  background-color: white !important;
+  border: none !important;
+  color: black !important;
+  margin-bottom: 100px !important;
+  font-size: 120% !important;
+}
