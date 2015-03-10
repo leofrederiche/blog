@@ -1,4 +1,5 @@
-<%= simple_form_for @new_comment, url: show_post_path(@post.title), class: "new-comment" do |p| %>
+<%= simple_form_for @comment, url: new_comment_path, class: "new-comment" do |p| %>
+  <%= p.input :post_id, as: :hidden %>
   <%= p.input :name, label: "Nome", class: "comment-name" %>
   <%= p.input :comment, label: "Comentário", class: "comment-name" %>
 

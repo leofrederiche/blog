@@ -1,17 +1,13 @@
 class PostsController < ApplicationController
 
   def new
-    unless current_user
-      redirect_to new_user_session_path
-    end
-
-    @new = Post.new
+    @post = Post.new
   end
 
   def create
-    @new = Post.create(post_params)
+    @post = Post.new(post_params)
 
-    if @new.save
+    if @post.save
       flash[:notice] = "Postagen postada"
       redirect_to root_path
     else
@@ -21,10 +17,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_title(params[:title])
+    @post = Post.find params[:id]
     @posts = Post.all.reverse
-    @new_comment = Comment.new
-    @comments = @post.comments.reverse
+    @comment = Comment.new(post_id: @post.id)
   end
 
   def edit
@@ -34,17 +29,18 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
 
-    @post.update_attributes(params.require(:post).permit(:title, :text))
-    @post.save
+    @post.update_attributes(post_params)
 
-    redirect_to show_post_path(@post.title)
+    if @post.save
+      redirect_to post_path(@post)      
+    else
+      render :edit
+    end
   end
 
-  def delete
-    @post = Post.find params[:id]
-
-    @post.delete
-
+  def destroy
+    post = Post.find params[:id]
+    post.destroy
     redirect_to root_path
   end
 

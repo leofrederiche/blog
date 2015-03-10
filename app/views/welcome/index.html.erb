@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-xs-12 col-md-4">
     <h1 class="name">Leonardo Camp</h1>
-    <% @posts.each do |p| %>
-      <h1># <%= link_to p.title, show_post_path(p.title) %></h1>
+    <% @posts.each do |post| %>
+      <h1># <%= link_to post.title, post_path(post) %></h1>
     <% end %>
 
   </div>

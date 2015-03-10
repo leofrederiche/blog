@@ -1,28 +1,27 @@
 class CommentsController < ApplicationController
 
   def create
-    @post = Post.find_by_title(params[:title])
-    @new = Comment.create(comment_params)
-    @new.id_post = @post.id
+    comment = Comment.new(comment_params)
 
-    if @new.save
-      redirect_to show_post_path(@post.title)
+    if comment.save
+      redirect_to post_path(comment.post)
     else
       flash[:notice] = "Ops, algo deu errado"
-      redirect_to show_post_path(@post.title)
+      redirect_to post_path(comment.post)
     end
   end
 
-  def delete
-    @comment = Comment.find params[:id]
-    @comment.delete
+  def destroy
+    comment = Comment.find params[:id]
+    post = comment.post_id
+    comment.destroy
 
-    redirect_to root_path
+    redirect_to post_path(post)
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:name, :comment, :id_post)
+    params.require(:comment).permit(:name, :comment, :post_id)
   end
 
 end

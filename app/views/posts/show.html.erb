@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-xs-12 col-md-4">
     <h1 class="name">Leonardo Camp</h1>
-    <% @posts.each do |p| %>
-      <h1># <%= link_to p.title, show_post_path(p.title) %></h1>
+    <% @posts.each do |post| %>
+      <h1># <%= link_to post.title, post_path(post) %></h1>
     <% end %>
 
   </div>
@@ -12,8 +12,8 @@
       <%= @post.title %>
     </h1>
     <p class="right">
-      <%= link_to "Editar", edit_post_path(@post.id) if current_user %> -
-      <%= link_to "Excluir", delete_post_path(@post.id) if current_user %>
+      <%= link_to "Editar", edit_post_path(@post) if current_user %> -
+      <%= link_to "Excluir", destroy_post_path(@post), method: :delete if current_user %>
     </p>
     <pre><%= @post.text %></pre>
     
@@ -21,13 +21,12 @@
 
     <%= render "new_comment" %>
 
-    <% @comments.each do |c| %>
+    <% @post.comments.each do |c| %>
       <div class="comment">
-        <b><%= c.name %></b>
-        <small><p>
-          <%= c.comment %>
-        </p></small>
-        <%= link_to "Excluir", delete_comment_path(c.id), class: "right" if current_user %>
+        <%= content_tag :strong, c.name %>
+        <%= content_tag :p, c.comment %>
+        <%= content_tag :p %>
+        <%= link_to "Excluir", destroy_comment_path(c.id), method: :delete, class: "right" if current_user %>
       </div>
     <% end %>    
 

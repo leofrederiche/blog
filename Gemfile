@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
+gem 'devise-i18n'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
