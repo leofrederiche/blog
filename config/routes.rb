@@ -2,17 +2,22 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  get "/new-post", to: "posts#new", as: :new_post
-  post "/new-post", to: "posts#create"
-  get "/post/:title", to: "posts#show", as: :show_post
+  controller :posts do
+    get "/posts/new", action: :new, as: :new_post
+    post "/posts/new", action: :create, as: false
+    get "/post/:title", action: :show, as: :post
 
-  post "/post/:title", to: "comments#create" #create comments
-  get "/delete-comment/:id", to: "comments#delete", as: :delete_comment
+    get "/posts/:id/edit", action: :edit, as: :edit_post
+    patch "/posts/:id/edit", action: :update, as: false
 
-  get "/edit/post/:id", to: "posts#edit", as: :edit_post
-  patch "/edit/post/:id", to: "posts#update"
-
-  get "/delete-post/:id", to: "posts#delete", as: :delete_post
+    delete "/posts/:id", action: :delete, as: :delete_post
+  end
+  
+  controller :comments do
+    post "/comments/new", action: :create, as: false #create comments
+    delete "/comments/:id", action: :delete, as: :destroy_comment
+  end
+  
 
   devise_for :users
 
